@@ -1,12 +1,12 @@
 # xxe_ssrf_challenge
-A simple challenge that require to exploit an XXE vulnerability to perform an SSRF attack.
+A simple challenge that requires to exploit an XXE vulnerability to perform an SSRF attack.
 
 ## Prerequisites
 - docker (see: [https://www.docker.com/get-started](https://www.docker.com/get-started))
 - docker-compose ( see: [https://docs.docker.com/compose/](https://docs.docker.com/compose/))
 
 ## Start Challenge
-To run the challenge environment run the command:
+To run the challenge environment, run the command:
 ```sh
 docker-compose up
 ```
