@@ -1,0 +1,19 @@
+nav {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    background-color: #e3f2fd !important;
+    font-size: larger;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #3a97ea !important;
+}
+
+nav a{
+    color: black;
+}
+/*
+.nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+*/

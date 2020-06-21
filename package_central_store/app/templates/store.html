@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if products and products|length > 0 %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/store.css') }}">
+    <script type="text/javascript" src="{{url_for('static', filename='js/store.js')}}"></script>
+    <ul style="padding-left: 0">
+        {% for product in products %}
+        <li class="card my-4">
+            <div class="row no-gutters">
+                <div class="col-md-4 d-flex flex-wrap align-items-center">
+                    <img src="{{url_for('static', filename='images/' + product.image)}}" class="card-img p-1" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">{{product.name}}</h3>
+                        <p class="card-text" style="font-size: larger">Price: <b>{{product.price}}€</b></p>
+                        <div class="card-text row mx-auto">
+                            <table class="table  col-md-4 product_{{product.productID}}">
+                                <thead class="thead-dark"><tr><th colspan="2">Stocks</th></tr></thead>
+                                <tr><th>Store 1</th><th>Store 2</th></tr>
+                                <tr><td class="store_1">{{product.productID}}</td><td class="store_2">{{product.productID}}</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% elif error %}
+    <h1>ERROR: {{error}}</h1>
+{% else %}
+    <h1>ERROR: no item found</h1>
+{% endif %}
+{% endblock %}

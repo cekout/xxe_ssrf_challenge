@@ -1,0 +1,67 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - BJJ Store</title>
+      {% else %}
+      <title>Welcome to BJJ Store</title>
+      {% endif %}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="{{url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+      <div class="container">
+        <nav class="navbar  navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+          <a class="navbar-brand" href="/">
+             <img src="{{url_for('static', filename='images/logo_3.png')}}", style="width: 64px" />
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div role="navigation" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-light nav-pills mr-auto">
+              <li class="nav-item">
+                <a class="nav-link {{ 'active' if active_page == 'home' or not active_page else '' }}" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ 'active' if active_page == 'store_kimono' else '' }}" href="/store?product_type=kimono">Kimonos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ 'active' if active_page == 'store_belt' else '' }}" href="/store?product_type=belt">Belts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ 'active' if active_page == 'store_tatami' else '' }}" href="/store?product_type=tatami">Tatami</a>
+              </li>
+            </ul>
+            <ul class="nav navbar-light nav-pills navbar-right">
+              <li class="nav-item navbar-right">
+                <a class="nav-link" href="#">Contacts</a>
+              </li>
+          <!--
+            <ul class="navbar-nav nav-pills mr-auto">
+              <li role="presentation" class="active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li role="presentation">
+                <a class="nav-link" href="#">Kimono</a>
+              </li>
+              <li role="presentation">
+                <a class="nav-link" href="#">Belt</a>
+              </li>
+              <li role="presentation">
+                <a class="nav-link" href="#">Tatami</a>
+              </li>
+            </ul>
+          -->
+          </div>
+        </nav>
+
+        {% block content %}{% endblock %}
+      </div>
+    </body>
+</html>
