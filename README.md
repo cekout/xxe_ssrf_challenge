@@ -60,6 +60,6 @@ networks:
 ```
 The network has the ip 172.200.0.0/16 and the name "default".  
 It contains 4 servers(services), each of which running a different application on the port 8080.
-Central store servers consists of an online store realized using flask, it has ip 172.200.1.1 and its 8080 port is mapped with 5000 port of localhost.
+Central store servers consist of an online store realized using flask, it has ip 172.200.1.1 and its 8080 port is mapped with 5000 port of localhost.
 XML store 1 and XML store 2 are 2 java servers that check the stocking of some product in their storage, they have ip 172.200.1.11 and 172.200.1.12 and their 8080 ports are mapped with 5001 and 5002 ports of localhost.
-Admin app is a flask application that run on the ip 172.200.1.21 and is the target server.
+Admin app is a flask application that runs on the ip 172.200.1.21 and is the target server.
