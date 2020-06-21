@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  central_store:
+    build: ./package_central_store/
+    ports:
+      - 5000:8080
+    networks:
+      default:
+        ipv4_address: 172.200.1.1
+
+  xml_store1:
+    build: ./package_xml_store1/
+    ports:
+      - 5001:8080
+    networks:
+      default:
+        ipv4_address: 172.200.1.11
+
+  xml_store2:
+    build: ./package_xml_store2/
+    ports:
+      - 5002:8080
+    networks:
+      default:
+        ipv4_address: 172.200.1.12
+
+  admin_app:
+    build: ./package_admin_app/
+    networks:
+      default:
+        ipv4_address: 172.200.1.21
+
+
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.200.0.0/16

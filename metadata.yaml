@@ -1,0 +1,39 @@
+title: "BJJ Store"
+description: >
+    A challenge on xxe and ssrf.
+
+tags: ["web", "server", "xxe", "ssrf"]
+points: 0.5
+flag: "flg{Do_No7_tRuS7_HomEM4de_P4RSeR}"
+
+network_info:
+  central_store:
+    hostname: central_store.bjj_store.seclab.dais.unive.it
+    port: 443
+    # Port exposed by the container
+    container_port: 8080
+    #ip of the service in the internal network
+    #ipv4: 172.200.1.1
+
+  xml_store1:
+    hostname: xml_store1.bjj_store.seclab.dais.unive.it
+    port: 443
+    # Port exposed by the container
+    container_port: 8080
+    #ip of the service in the internal network
+    #ipv4: 172.200.1.11
+
+  xml_store2:
+    hostname: xml_store2.bjj_store.seclab.dais.unive.it
+    port: 443
+    # Port exposed by the container
+    container_port: 8080
+    #ip of the service in the internal network
+    #ipv4: 172.200.1.12
+
+  admin_app:
+    #no hostname, this service is accessible only by hosts that stand in the network
+    # Port exposed by the container
+    container_port: 8080
+    #ip of the service in the internal network
+    #ipv4: 172.200.1.20
